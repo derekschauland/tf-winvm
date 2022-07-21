@@ -10,5 +10,5 @@ variable "owner" {
   default = ""
 }
 variable "environment" {
-  default = ""
+  default = "dev"
 }
