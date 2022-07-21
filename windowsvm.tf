@@ -12,7 +12,7 @@ resource "azurerm_network_interface" "eth0" {
 
 
 resource "azurerm_windows_virtual_machine" "vm" {
-    name = module.naming.azurerm_windows_virtual_machine.name
+    name = module.naming.windows_virtual_machine.name
     resource_group_name = azurerm_resource_group.this.name
     location = azurerm_resource_group.this.location
 
