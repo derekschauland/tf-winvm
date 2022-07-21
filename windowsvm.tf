@@ -1,5 +1,5 @@
 resource "azurerm_network_interface" "eth0" {
-  name = module.naming.azurerm_network_interface.name
+  name = module.naming.network_interface.name
   resource_group_name = azurerm_resource_group.this.name
   location = azurerm_resource_group.this.location
 
