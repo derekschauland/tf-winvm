@@ -8,7 +8,7 @@ terraform {
   backend "remote" {
     organization = "derek2-training"
     workspaces {
-      name = "tf-win-vm"
+      name = "tf-winvm"
     }
   }
 }
