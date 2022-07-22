@@ -4,6 +4,10 @@ resource "azurerm_public_ip" "pip" {
     resource_group_name = azurerm_resource_group.this.name
     allocation_method = "Static"
     sku = "Standard"
+
+    depends_on = [
+      azurerm_bastion_host.jump
+    ]
 }
 
 resource "azurerm_bastion_host" "jump" {
@@ -15,6 +19,7 @@ ip_configuration {
   name = "jump_config"
   subnet_id = azurerm_subnet.bastion.id
   public_ip_address_id = azurerm_public_ip.pip.id
+  
 
 }
 }
