@@ -5,9 +5,9 @@ resource "azurerm_public_ip" "pip" {
     allocation_method = "Static"
     sku = "Standard"
 
-    depends_on = [
-      azurerm_subnet.bastion
-    ]
+depends_on = [
+  azurerm_bastion_host.jump
+]
 }
 
 resource "azurerm_bastion_host" "jump" {
@@ -22,7 +22,4 @@ ip_configuration {
   
 }
 
-depends_on = [
-  azurerm_public_ip.pip
-]
 }
