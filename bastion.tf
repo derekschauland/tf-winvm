@@ -6,7 +6,7 @@ resource "azurerm_public_ip" "pip" {
     sku = "Standard"
 
     depends_on = [
-      azurerm_bastion_host.jump
+      azurerm_subnet.bastion
     ]
 }
 
@@ -20,6 +20,9 @@ ip_configuration {
   subnet_id = azurerm_subnet.bastion.id
   public_ip_address_id = azurerm_public_ip.pip.id
   
-
 }
+
+depends_on = [
+  azurerm_public_ip.pip
+]
 }
